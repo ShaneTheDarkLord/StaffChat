@@ -3,5 +3,5 @@ version: 1.0
 main: org.shanethedarklord.main.staffchat.StaffChat
 author: ShaneTheDarkLord
 commands:
-  sc:
+  atoggle:
     description:  Enable or Disable Staffchat

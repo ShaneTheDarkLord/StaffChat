@@ -18,14 +18,14 @@ public class Chat implements Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
-        String Prefix = ("&7&l[&6&lStaff&e&lChat&7&l]");
+        String Prefix = ChatColor.translateAlternateColorCodes('&', "&7&l[&6&lLocalStaff&7&l]");
         String msg = e.getMessage();
 
         if (Commands.Insc.contains(p)) {
             e.setCancelled(true);
             for (Player staff : Bukkit.getServer().getOnlinePlayers()) {
                 if (p.hasPermission("staffchat.see")) {
-                    staff.sendMessage(Prefix + " " + p.getDisplayName() + ChatColor.RED + ">>" + ChatColor.YELLOW + msg);
+                    staff.sendMessage(Prefix + " " + p.getDisplayName() +  " " + ChatColor.GOLD + ":" + ChatColor.YELLOW + " " + msg);
                 }
             }
         }

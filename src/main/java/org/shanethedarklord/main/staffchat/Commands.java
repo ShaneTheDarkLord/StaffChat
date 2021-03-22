@@ -17,14 +17,14 @@ public class Commands implements CommandExecutor {
 
     public static ArrayList<Player> Insc = new ArrayList<Player>();
 
-    String Prefix = ("&7&l[&6&lStaff&e&lChat&7&l]");
-    String Enabled = ("&7&l[&6&lStaff&e&lChat&7&l] &fhas been enabled");
-    String Disabled = ("&7&l[&6&lStaff&e&lChat&7&l] &fhas been disabled");
-    String NoPerm = ("&cYou do not have permission to use this command");
+    String Prefix = ChatColor.translateAlternateColorCodes('&', "&7&l[&6&lLocalStaff&7&l]");
+    String Enabled = ChatColor.translateAlternateColorCodes('&', "&7&l[&6&lStaff&e&lChat&7&l] &fhas been &a&lenabled");
+    String Disabled = ChatColor.translateAlternateColorCodes('&', "&7&l[&6&lStaff&e&lChat&7&l] &fhas been &c&ldisabled");
+    String NoPerm = ChatColor.translateAlternateColorCodes('&', "&cYou do not have permission to use this command");
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String arg2, String[] args) {
-        if (cmd.getName().equalsIngoreCase("sc")) {
+        if (cmd.getName().equalsIgnoreCase("atoggle")) {
             if (!(sender instanceof Player)) {
                 sender.sendMessage("You must be a player to use this command");
                 return true;
@@ -47,10 +47,9 @@ public class Commands implements CommandExecutor {
                 return true;
             }
             if (args.length >= 1) {
-                p.sendMessage(Prefix + ChatColor.GRAY + "Usage:");
+                p.sendMessage(Prefix + ChatColor.GRAY + "Usage: /atoggle to toggle staffchat");
                 return true;
             }
-
         }
         return false;
     }

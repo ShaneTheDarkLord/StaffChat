@@ -19,7 +19,7 @@ public final class StaffChat extends JavaPlugin {
     }
 
     public void registerCommands(){
-        getCommand("sc").setExecutor(new Commands(this));
+        getCommand("atoggle").setExecutor(new Commands(this));
 
     }
     public void registerEvents(){
